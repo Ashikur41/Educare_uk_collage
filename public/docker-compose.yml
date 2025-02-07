@@ -1,0 +1,33 @@
+version: '3'
+services:
+  php-agency-environment:
+    container_name: php-agency-apache
+    build:
+      context: .docker
+      dockerfile: Dockerfile
+    depends_on:
+      - agency_db
+    volumes:
+      - ./:/var/www/html/
+    ports:
+      - 8066:80
+  agency_db:
+    container_name: agency-db
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: agency
+    ports:
+      - "9923:3306"
+  agency-phpmyadmin:
+    image: phpmyadmin
+    container_name: agency-phpmyadmin
+    links:
+      - agency_db
+    environment:
+      PMA_HOST: agency-db
+      UPLOAD_LIMIT: 3000M
+    restart: always
+    ports:
+      - 8299:80

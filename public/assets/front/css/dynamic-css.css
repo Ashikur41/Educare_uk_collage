@@ -1,0 +1,8 @@
+.site-logo a img {
+    filter: none !important;
+}
+.footer-area .footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 5px;
+    text-align: center;
+}

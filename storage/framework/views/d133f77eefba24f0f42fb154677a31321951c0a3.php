@@ -1,0 +1,1 @@
+<h1 style="display: block; text-align: center; margin-top: 400px">404</h1><?php /**PATH E:\ASHIK_WORK 21-10-24\ASHOPAY\EDU-CARE\educaretc-development\educaretc-development\core\resources\views/errors/404.blade.php ENDPATH**/ ?>
