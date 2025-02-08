@@ -13,15 +13,15 @@
     .team-area.team-with-shape-two::before {
         background-image: url(../images/team-bg.jpg);
     }
-    .service-item::before {
+    /* .service-item::before {
         background-image: url(../images/service-dot.png);
-    }
-    .portfolio-area.portfolio-area-shape::before {
+    } */
+    /* .portfolio-area.portfolio-area-shape::before {
         background-image: url(../images/portfolio-shape.png);
-    }
-    .service-item-three::before {
+    } */
+    /* .service-item-three::before {
         background-image: url(../images/service-dot.png);
-    }
+    } */
     .site-logo a img{
         max-width: 170px;
     }

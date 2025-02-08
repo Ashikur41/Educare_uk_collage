@@ -6,7 +6,7 @@
 @if($visibility->is_t5_slider_section == 1)
     <!--====== Banner Slider Start ======-->
     @if ($visibility->is_video_hero == 1)
-        <section id="herovideo" class="banner-section-three theme5" style="background-image: url({{ asset('assets/front/img/'.$sinfo->hero_bg_image ) }});">
+        <section id="herovideo" class="banner-section-three theme5">
             <div id="bgndVideo" data-property="{videoURL:'{{ $commonsetting->hero_section_video_link }}',containment:'#herovideo', quality:'large', autoPlay:true, loop:true, mute:true, opacity:1}"></div>
             <div class="overlay">
                 <div class="container position-relative">

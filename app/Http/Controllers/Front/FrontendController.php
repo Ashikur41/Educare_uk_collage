@@ -551,13 +551,34 @@ class FrontendController extends Controller
     public function quote_submit(Request $request){
         
 
-        // $request->validate([
-        //     'name' => 'required|string',
-        //     'email' => 'required|email',
-        //     'phone' => 'required|numeric',
-        //     'subject' => 'required|string',
-        //     'description' => 'required'
-        // ]);
+        $request->validate([
+            'course_applied_for' => 'required|string',
+            'email' => 'required|email',
+            'gender_title' => 'required',
+            'first_name' => 'required|string',
+            'last_name' => 'required',
+            'date_of_birth' => 'required',
+            'nationality' => 'required',
+            'Sex' => 'required',
+            'parsonel_address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'postcode' => 'required',
+            'contact_number' => 'required',
+            'passport_number' => 'required',
+            'passport_issue_date' => 'required',
+            'passport_expiry_date' => 'required',
+            'place_of_issue' => 'required',
+            'course_title' => 'required',
+            'institute_name' => 'required',
+            'passing_year' => 'required',
+            'grade' => 'required',
+            'emergency_contact_name' => 'required',
+            'relationship_name' => 'required',
+            'emergency_address' => 'required',
+            'emergency_postcode' => 'required',
+            'emergency_number' => 'required',
+        ]);
 
         // $visibility = Visibility::first();
 

@@ -40,7 +40,7 @@
                             <tr>
                                 <th><input type="checkbox" data-target="quote-bulk-delete" class="bulk_all_delete"></th>
                                 <th>{{ __('Name') }}</th>
-                                <th>{{ __('Subject') }}</th>
+                                <th>{{ __('Course Applied For') }}</th>
                                 <th>{{ __('Mail') }}</th>
                                 <th>{{ __('Status') }}</th>
                                 <th>{{ __('Action') }}</th>
@@ -52,10 +52,10 @@
                             <tr id="quote-bulk-delete">
                                 <td><input type="checkbox" class="bulk-item" value="{{ $quote->id}} "></td>
                                 <td>
-                                    {{ $quote->name }}
+                                    {{ $quote->country }} {{ $quote->budget }}
                                 </td>
                                 <td>
-                                    {{ $quote->subject }}
+                                    {{ $quote->name }}
                                 </td> 
                                 <td>
                                     <a href="mailto:{{ $quote->email }}" class="btn btn-primary btn-sm"><i class="fas fa-paper-plane"></i> {{ __('Send Mail') }}</a>

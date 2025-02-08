@@ -272,7 +272,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="institute_name">{{ __('Institute Name') }} <span class="text-danger">*</span></label>
-                                <input type="date" id="institute_name" name="institute_name" value="{{ old('institute_name') }}" class="form-control">
+                                <input type="text" id="institute_name" name="institute_name" placeholder="Institute Name" value="{{ old('institute_name') }}" class="form-control">
                                 @if ($errors->has('institute_name'))
                                     <p class="text-danger"> {{ $errors->first('institute_name') }} </p>
                                 @endif
