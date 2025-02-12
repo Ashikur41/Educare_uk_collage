@@ -35,7 +35,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="date_of_birth"><?php echo e(__('Course Applied For')); ?> <span class="text-danger">*</span></label>
-                                <select class="form-select" name="course_applied_for" aria-label="Default select example">
+                                <select class="form-select" name="course_applied_for" aria-label="Default select example" style="border:2px;">
                                     <option value="" selected><?php echo e(__('Course Applied For')); ?></option>
                                     <option value="B2 Level General English" <?php echo e(old('course_applied_for') == '1' ? 'selected' : ''); ?>><?php echo e(__('B2 Level General English')); ?></option>
                                 </select>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('Email')); ?> <span class="text-danger">*</span></label>
+                                <label for="email"><?php echo e(__('Email')); ?> <span class="text-danger">*</span></label>
                                 <input type="email"  placeholder="<?php echo e(__('Email Here')); ?> *" name="email" value="<?php echo e(old('email')); ?>">
                                 <?php if($errors->has('email')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('email')); ?> </p>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('City')); ?> <span class="text-danger">*</span></label>
+                                <label for="city"><?php echo e(__('City')); ?> <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="<?php echo e(__('City')); ?> *" name="city" value="<?php echo e(old('city')); ?>">
                                 <?php if($errors->has('city')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('city')); ?> </p>
@@ -184,8 +184,8 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('Postcode')); ?> <span class="text-danger">*</span></label>
-                                <input type="email"  placeholder="<?php echo e(__('Postcode')); ?> *" name="postcode" value="<?php echo e(old('postcode')); ?>">
+                                <label for="Postcode"><?php echo e(__('Postcode')); ?> <span class="text-danger">*</span></label>
+                                <input type="text"  placeholder="<?php echo e(__('Postcode')); ?> *" name="postcode" value="<?php echo e(old('postcode')); ?>">
                                 <?php if($errors->has('Postcode')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('postcode')); ?> </p>
                                 <?php endif; ?>
@@ -206,7 +206,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('Passport Number')); ?> <span class="text-danger">*</span></label>
+                                <label for="passport_number"><?php echo e(__('Passport Number')); ?> <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="<?php echo e(__('Passport Number')); ?> *" name="passport_number" value="<?php echo e(old('passport_number')); ?>">
                                 <?php if($errors->has('Passport Number')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('passport_number')); ?> </p>
@@ -342,7 +342,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('Name')); ?> <span class="text-danger">*</span></label>
+                                <label for="emergency_contact_name"><?php echo e(__('Name')); ?> <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="<?php echo e(__('Name')); ?> *" name="emergency_contact_name" value="<?php echo e(old('emergency_contact_name')); ?>">
                                 <?php if($errors->has('emergency_contact_name')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('emergency_contact_name')); ?> </p>
@@ -351,7 +351,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth"><?php echo e(__('Relationship of above to you')); ?> <span class="text-danger">*</span></label>
+                                <label for="relationship_name"><?php echo e(__('Relationship of above to you')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="relationship_name" aria-label="Default select example">
                                     <option value="" selected><?php echo e(__('Relationship of above to you')); ?></option>
                                     <option value="Brother" <?php echo e(old('relationship_name') == '1' ? 'selected' : ''); ?>><?php echo e(__('Brother')); ?></option>
@@ -373,7 +373,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="emergency_address"><?php echo e(__('Address')); ?> <span class="text-danger">*</span></label>
-                                <input type="date" id="emergency_address" name="emergency_address" value="<?php echo e(old('emergency_address')); ?>" class="form-control">
+                                <input type="text" id="emergency_address" name="emergency_address" value="<?php echo e(old('emergency_address')); ?>" class="form-control" placeholder="Enter Address">
                                 <?php if($errors->has('emergency_address')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('emergency_address')); ?> </p>
                                 <?php endif; ?>
@@ -382,7 +382,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="postcode"><?php echo e(__('Postcode')); ?> <span class="text-danger">*</span></label>
-                                <input type="date" id="postcode" name="emergency_postcode" value="<?php echo e(old('emergency_postcode')); ?>" class="form-control">
+                                <input type="text" id="postcode" name="emergency_postcode" value="<?php echo e(old('emergency_postcode')); ?>" class="form-control" placeholder="Enter Postcode">
                                 <?php if($errors->has('emergency_postcode')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('emergency_postcode')); ?> </p>
                                 <?php endif; ?>
@@ -391,7 +391,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="emergency_number"><?php echo e(__('Contact Number')); ?> <span class="text-danger">*</span></label>
-                                <input type="date" id="emergency_number" name="emergency_number" value="<?php echo e(old('emergency_number')); ?>" class="form-control">
+                                <input type="text" id="emergency_number" name="emergency_number" value="<?php echo e(old('emergency_number')); ?>" class="form-control" placeholder="Contact Number">
                                 <?php if($errors->has('emergency_number')): ?>
                                     <p class="text-danger"> <?php echo e($errors->first('emergency_number')); ?> </p>
                                 <?php endif; ?>

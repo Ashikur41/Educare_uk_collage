@@ -36,7 +36,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="date_of_birth">{{ __('Course Applied For') }} <span class="text-danger">*</span></label>
-                                <select class="form-select" name="course_applied_for" aria-label="Default select example">
+                                <select class="form-select" name="course_applied_for" aria-label="Default select example" style="border:2px;">
                                     <option value="" selected>{{ __('Course Applied For') }}</option>
                                     <option value="B2 Level General English" {{ old('course_applied_for') == '1' ? 'selected' : '' }}>{{ __('B2 Level General English') }}</option>
                                 </select>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('Email') }} <span class="text-danger">*</span></label>
+                                <label for="email">{{ __('Email') }} <span class="text-danger">*</span></label>
                                 <input type="email"  placeholder="{{ __('Email Here') }} *" name="email" value="{{ old('email') }}">
                                 @if ($errors->has('email'))
                                     <p class="text-danger"> {{ $errors->first('email') }} </p>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('City') }} <span class="text-danger">*</span></label>
+                                <label for="city">{{ __('City') }} <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="{{ __('City') }} *" name="city" value="{{ old('city') }}">
                                 @if ($errors->has('city'))
                                     <p class="text-danger"> {{ $errors->first('city') }} </p>
@@ -185,8 +185,8 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('Postcode') }} <span class="text-danger">*</span></label>
-                                <input type="email"  placeholder="{{ __('Postcode') }} *" name="postcode" value="{{ old('postcode') }}">
+                                <label for="Postcode">{{ __('Postcode') }} <span class="text-danger">*</span></label>
+                                <input type="text"  placeholder="{{ __('Postcode') }} *" name="postcode" value="{{ old('postcode') }}">
                                 @if ($errors->has('Postcode'))
                                     <p class="text-danger"> {{ $errors->first('postcode') }} </p>
                                 @endif
@@ -207,7 +207,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('Passport Number') }} <span class="text-danger">*</span></label>
+                                <label for="passport_number">{{ __('Passport Number') }} <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="{{ __('Passport Number') }} *" name="passport_number" value="{{ old('passport_number') }}">
                                 @if ($errors->has('Passport Number'))
                                     <p class="text-danger"> {{ $errors->first('passport_number') }} </p>
@@ -343,7 +343,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('Name') }} <span class="text-danger">*</span></label>
+                                <label for="emergency_contact_name">{{ __('Name') }} <span class="text-danger">*</span></label>
                                 <input type="text"  placeholder="{{ __('Name') }} *" name="emergency_contact_name" value="{{ old('emergency_contact_name') }}">
                                 @if ($errors->has('emergency_contact_name'))
                                     <p class="text-danger"> {{ $errors->first('emergency_contact_name') }} </p>
@@ -352,7 +352,7 @@
                         </div>
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
-                                <label for="date_of_birth">{{ __('Relationship of above to you') }} <span class="text-danger">*</span></label>
+                                <label for="relationship_name">{{ __('Relationship of above to you') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="relationship_name" aria-label="Default select example">
                                     <option value="" selected>{{ __('Relationship of above to you') }}</option>
                                     <option value="Brother" {{ old('relationship_name') == '1' ? 'selected' : '' }}>{{ __('Brother') }}</option>
@@ -374,7 +374,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="emergency_address">{{ __('Address') }} <span class="text-danger">*</span></label>
-                                <input type="date" id="emergency_address" name="emergency_address" value="{{ old('emergency_address') }}" class="form-control">
+                                <input type="text" id="emergency_address" name="emergency_address" value="{{ old('emergency_address') }}" class="form-control" placeholder="Enter Address">
                                 @if ($errors->has('emergency_address'))
                                     <p class="text-danger"> {{ $errors->first('emergency_address') }} </p>
                                 @endif
@@ -383,7 +383,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="postcode">{{ __('Postcode') }} <span class="text-danger">*</span></label>
-                                <input type="date" id="postcode" name="emergency_postcode" value="{{ old('emergency_postcode') }}" class="form-control">
+                                <input type="text" id="postcode" name="emergency_postcode" value="{{ old('emergency_postcode') }}" class="form-control" placeholder="Enter Postcode">
                                 @if ($errors->has('emergency_postcode'))
                                     <p class="text-danger"> {{ $errors->first('emergency_postcode') }} </p>
                                 @endif
@@ -392,7 +392,7 @@
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="emergency_number">{{ __('Contact Number') }} <span class="text-danger">*</span></label>
-                                <input type="date" id="emergency_number" name="emergency_number" value="{{ old('emergency_number') }}" class="form-control">
+                                <input type="text" id="emergency_number" name="emergency_number" value="{{ old('emergency_number') }}" class="form-control" placeholder="Contact Number">
                                 @if ($errors->has('emergency_number'))
                                     <p class="text-danger"> {{ $errors->first('emergency_number') }} </p>
                                 @endif
