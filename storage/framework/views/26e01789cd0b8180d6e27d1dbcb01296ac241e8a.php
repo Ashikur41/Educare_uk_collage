@@ -48,7 +48,7 @@
                             <div class="input-box mb-20">
                                 <label for="gender_title"><?php echo e(__('Title')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="gender_title" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Title')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Title')); ?></option>
                                     <option value="Mr" <?php echo e(old('gender_title') == '1' ? 'selected' : ''); ?>><?php echo e(__('Mr')); ?></option>
                                     <option value="Ms" <?php echo e(old('gender_title') == '1' ? 'selected' : ''); ?>><?php echo e(__('Ms')); ?></option>
                                     <option value="Mrs" <?php echo e(old('gender_title') == '1' ? 'selected' : ''); ?>><?php echo e(__('Mrs')); ?></option>
@@ -105,30 +105,49 @@
                                 <?php endif; ?>
                             </div>
                         </div>
+                        
+
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="nationality"><?php echo e(__('Select Nationality')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="nationality" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Select Nationality')); ?></option>
-                                    <option value="Afghan" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Afghan')); ?></option>
-                                    <option value="Albanian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Albanian')); ?></option>
-                                    <option value="Algerian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Algerian')); ?></option>
-                                    <option value="American" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('American')); ?></option>
-                                    <option value="Andorran" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Andorran')); ?></option>
-                                    <option value="Angolan" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Angolan')); ?></option>
-                                    <option value="Antiguans" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Antiguans')); ?></option>
-                                    <option value="Argentinean" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Argentinean')); ?></option>
-                                    <option value="Armenian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Armenian')); ?></option>
-                                    <option value="Australian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Australian')); ?></option>
-                                    <option value="Austrian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Austrian')); ?></option>
-                                    <option value="Azerbaijani" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Azerbaijani')); ?></option>
-                                    <option value="Bahamian" <?php echo e(old('nationality') == '1' ? 'selected' : ''); ?>><?php echo e(__('Bahamian')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Select Nationality')); ?></option>
+                                    <?php $__currentLoopData = [
+                                        'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Antiguans', 'Argentinean', 'Armenian', 
+                                        'Australian', 'Austrian', 'Azerbaijani', 'Bahamian', 'Bahraini', 'Bangladeshi', 'Barbadian', 'Barbudans', 
+                                        'Batswana', 'Belarusian', 'Belgian', 'Belizean', 'Beninese', 'Bhutanese', 'Bolivian', 'Bosnian', 'Brazilian', 
+                                        'British', 'Bruneian', 'Bulgarian', 'Burkinabe', 'Burmese', 'Burundian', 'Cambodian', 'Cameroonian', 'Canadian', 
+                                        'Cape Verdean', 'Central African', 'Chadian', 'Chilean', 'Chinese', 'Colombian', 'Comoran', 'Congolese', 
+                                        'Costa Rican', 'Croatian', 'Cuban', 'Cypriot', 'Czech', 'Danish', 'Djibouti', 'Dominican', 'Dutch', 'East Timorese', 
+                                        'Ecuadorean', 'Egyptian', 'Emirian', 'Equatorial Guinean', 'Eritrean', 'Estonian', 'Ethiopian', 'Fijian', 'Filipino', 
+                                        'Finnish', 'French', 'Gabonese', 'Gambian', 'Georgian', 'German', 'Ghanaian', 'Greek', 'Grenadian', 'Guatemalan', 
+                                        'Guinea-Bissauan', 'Guinean', 'Guyanese', 'Haitian', 'Herzegovinian', 'Honduran', 'Hungarian', 'Icelander', 'Indian', 
+                                        'Indonesian', 'Iranian', 'Iraqi', 'Irish', 'Israeli', 'Italian', 'Ivorian', 'Jamaican', 'Japanese', 'Jordanian', 
+                                        'Kazakhstani', 'Kenyan', 'Kittian and Nevisian', 'Kuwaiti', 'Kyrgyz', 'Laotian', 'Latvian', 'Lebanese', 'Liberian', 
+                                        'Libyan', 'Liechtensteiner', 'Lithuanian', 'Luxembourger', 'Macedonian', 'Malagasy', 'Malawian', 'Malaysian', 
+                                        'Maldivian', 'Malian', 'Maltese', 'Marshallese', 'Mauritanian', 'Mauritian', 'Mexican', 'Micronesian', 'Moldovan', 
+                                        'Monacan', 'Mongolian', 'Moroccan', 'Mosotho', 'Motswana', 'Mozambican', 'Namibian', 'Nauruan', 'Nepalese', 
+                                        'New Zealander', 'Ni-Vanuatu', 'Nicaraguan', 'Nigerien', 'North Korean', 'Northern Irish', 'Norwegian', 'Omani', 
+                                        'Pakistani', 'Palauan', 'Panamanian', 'Papua New Guinean', 'Paraguayan', 'Peruvian', 'Polish', 'Portuguese', 'Qatari', 
+                                        'Romanian', 'Russian', 'Rwandan', 'Saint Lucian', 'Salvadoran', 'Samoan', 'San Marinese', 'Sao Tomean', 'Saudi', 
+                                        'Scottish', 'Senegalese', 'Serbian', 'Seychellois', 'Sierra Leonean', 'Singaporean', 'Slovakian', 'Slovenian', 
+                                        'Solomon Islander', 'Somali', 'South African', 'South Korean', 'Spanish', 'Sri Lankan', 'Sudanese', 'Surinamer', 
+                                        'Swazi', 'Swedish', 'Swiss', 'Syrian', 'Taiwanese', 'Tajik', 'Tanzanian', 'Thai', 'Togolese', 'Tongan', 
+                                        'Trinidadian or Tobagonian', 'Tunisian', 'Turkish', 'Tuvaluan', 'Ugandan', 'Ukrainian', 'Uruguayan', 'Uzbekistani', 
+                                        'Venezuelan', 'Vietnamese', 'Welsh', 'Yemenite', 'Zambian', 'Zimbabwean'
+                                    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $nationality): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($nationality); ?>" <?php echo e(old('nationality') == $nationality ? 'selected' : ''); ?>>
+                                            <?php echo e(__($nationality)); ?>
+
+                                        </option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                                 <?php if($errors->has('nationality')): ?>
                                     <p class="text-danger"><?php echo e($errors->first('nationality')); ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>
+                        
                         
                         <div class="mb-3">
                             <label class="form-label"><?php echo e(__('Sex')); ?> <span class="text-danger">*</span></label>
@@ -231,30 +250,49 @@
                                 <?php endif; ?>
                             </div>
                         </div>
+                        
+
                         <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="place_of_issue"><?php echo e(__('Place Of Issue')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="place_of_issue" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Place Of Issue')); ?></option>
-                                    <option value="Afghanistan" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Afghanistan')); ?></option>
-                                    <option value="Albania" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Albania')); ?></option>
-                                    <option value="Algeria" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Algeria')); ?></option>
-                                    <option value="Andorra" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Andorra')); ?></option>
-                                    <option value="Angola" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Angola')); ?></option>
-                                    <option value="Antigua and Barbuda" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Antigua and Barbuda')); ?></option>
-                                    <option value="Argentina" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Argentina')); ?></option>
-                                    <option value="Armenia" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Armenia')); ?></option>
-                                    <option value="Australia" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Australia')); ?></option>
-                                    <option value="Austria" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Austria')); ?></option>
-                                    <option value="Azerbaijan" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Azerbaijan')); ?></option>
-                                    <option value="Bahamas" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Bahamas')); ?></option>
-                                    <option value="Bahrain" <?php echo e(old('place_of_issue') == '1' ? 'selected' : ''); ?>><?php echo e(__('Bahrain')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Place Of Issue')); ?></option>
+                                    <?php $__currentLoopData = [
+                                        'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 
+                                        'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 
+                                        'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 
+                                        'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cambodia', 'Cameroon', 'Canada', 'Central African Republic', 'Chad', 
+                                        'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czechia', 
+                                        'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 
+                                        'Eritrea', 'Estonia', 'Eswatini', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 
+                                        'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Holy See', 
+                                        'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 
+                                        'Ivory Coast', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 
+                                        'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagascar', 
+                                        'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 
+                                        'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 
+                                        'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'North Macedonia', 
+                                        'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 
+                                        'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 
+                                        'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 
+                                        'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 
+                                        'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 
+                                        'Switzerland', 'Syria', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 
+                                        'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 
+                                        'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
+                                    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $country): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value="<?php echo e($country); ?>" <?php echo e(old('place_of_issue') == $country ? 'selected' : ''); ?>>
+                                            <?php echo e(__($country)); ?>
+
+                                        </option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                                 <?php if($errors->has('place_of_issue')): ?>
                                     <p class="text-danger"><?php echo e($errors->first('place_of_issue')); ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>
+                        
                     </div>
 
                     <h1 style="font-size: 30px;">Education History</h1>
@@ -281,7 +319,7 @@
                             <div class="input-box mb-20">
                                 <label for="passing_year"><?php echo e(__('Passing Year')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="passing_year" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Passing Year')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Passing Year')); ?></option>
                                     <option value="2001" <?php echo e(old('passing_year') == '1' ? 'selected' : ''); ?>><?php echo e(__('2001')); ?></option>
                                     <option value="2000" <?php echo e(old('passing_year') == '1' ? 'selected' : ''); ?>><?php echo e(__('2000')); ?></option>
                                     <option value="2002" <?php echo e(old('passing_year') == '1' ? 'selected' : ''); ?>><?php echo e(__('2002')); ?></option>
@@ -321,7 +359,7 @@
                             <div class="input-box mb-20">
                                 <label for="date_of_birth"><?php echo e(__('Grade')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="grade" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Select')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Select')); ?></option>
                                     <option value="A+" <?php echo e(old('grade') == '1' ? 'selected' : ''); ?>><?php echo e(__('A+')); ?></option>
                                     <option value="A" <?php echo e(old('grade') == '1' ? 'selected' : ''); ?>><?php echo e(__('A')); ?></option>
                                     <option value="B+" <?php echo e(old('grade') == '1' ? 'selected' : ''); ?>><?php echo e(__('B+')); ?></option>
@@ -353,7 +391,7 @@
                             <div class="input-box mb-20">
                                 <label for="relationship_name"><?php echo e(__('Relationship of above to you')); ?> <span class="text-danger">*</span></label>
                                 <select class="form-select" name="relationship_name" aria-label="Default select example">
-                                    <option value="" selected><?php echo e(__('Relationship of above to you')); ?></option>
+                                    <option disabled value="" selected><?php echo e(__('Relationship of above to you')); ?></option>
                                     <option value="Brother" <?php echo e(old('relationship_name') == '1' ? 'selected' : ''); ?>><?php echo e(__('Brother')); ?></option>
                                     <option value="Child" <?php echo e(old('relationship_name') == '1' ? 'selected' : ''); ?>><?php echo e(__('Child')); ?></option>
                                     <option value="Daughter" <?php echo e(old('relationship_name') == '1' ? 'selected' : ''); ?>><?php echo e(__('Daughter')); ?></option>

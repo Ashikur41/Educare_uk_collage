@@ -49,7 +49,7 @@
                             <div class="input-box mb-20">
                                 <label for="gender_title">{{ __('Title') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="gender_title" aria-label="Default select example">
-                                    <option value="" selected>{{ __('Title') }}</option>
+                                    <option disabled value="" selected>{{ __('Title') }}</option>
                                     <option value="Mr" {{ old('gender_title') == '1' ? 'selected' : '' }}>{{ __('Mr') }}</option>
                                     <option value="Ms" {{ old('gender_title') == '1' ? 'selected' : '' }}>{{ __('Ms') }}</option>
                                     <option value="Mrs" {{ old('gender_title') == '1' ? 'selected' : '' }}>{{ __('Mrs') }}</option>
@@ -106,7 +106,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        {{-- <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="nationality">{{ __('Select Nationality') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="nationality" aria-label="Default select example">
@@ -129,7 +129,48 @@
                                     <p class="text-danger">{{ $errors->first('nationality') }}</p>
                                 @endif
                             </div>
+                        </div> --}}
+
+                        <div class="col-lg-3">
+                            <div class="input-box mb-20">
+                                <label for="nationality">{{ __('Select Nationality') }} <span class="text-danger">*</span></label>
+                                <select class="form-select" name="nationality" aria-label="Default select example">
+                                    <option disabled value="" selected>{{ __('Select Nationality') }}</option>
+                                    @foreach([
+                                        'Afghan', 'Albanian', 'Algerian', 'American', 'Andorran', 'Angolan', 'Antiguans', 'Argentinean', 'Armenian', 
+                                        'Australian', 'Austrian', 'Azerbaijani', 'Bahamian', 'Bahraini', 'Bangladeshi', 'Barbadian', 'Barbudans', 
+                                        'Batswana', 'Belarusian', 'Belgian', 'Belizean', 'Beninese', 'Bhutanese', 'Bolivian', 'Bosnian', 'Brazilian', 
+                                        'British', 'Bruneian', 'Bulgarian', 'Burkinabe', 'Burmese', 'Burundian', 'Cambodian', 'Cameroonian', 'Canadian', 
+                                        'Cape Verdean', 'Central African', 'Chadian', 'Chilean', 'Chinese', 'Colombian', 'Comoran', 'Congolese', 
+                                        'Costa Rican', 'Croatian', 'Cuban', 'Cypriot', 'Czech', 'Danish', 'Djibouti', 'Dominican', 'Dutch', 'East Timorese', 
+                                        'Ecuadorean', 'Egyptian', 'Emirian', 'Equatorial Guinean', 'Eritrean', 'Estonian', 'Ethiopian', 'Fijian', 'Filipino', 
+                                        'Finnish', 'French', 'Gabonese', 'Gambian', 'Georgian', 'German', 'Ghanaian', 'Greek', 'Grenadian', 'Guatemalan', 
+                                        'Guinea-Bissauan', 'Guinean', 'Guyanese', 'Haitian', 'Herzegovinian', 'Honduran', 'Hungarian', 'Icelander', 'Indian', 
+                                        'Indonesian', 'Iranian', 'Iraqi', 'Irish', 'Israeli', 'Italian', 'Ivorian', 'Jamaican', 'Japanese', 'Jordanian', 
+                                        'Kazakhstani', 'Kenyan', 'Kittian and Nevisian', 'Kuwaiti', 'Kyrgyz', 'Laotian', 'Latvian', 'Lebanese', 'Liberian', 
+                                        'Libyan', 'Liechtensteiner', 'Lithuanian', 'Luxembourger', 'Macedonian', 'Malagasy', 'Malawian', 'Malaysian', 
+                                        'Maldivian', 'Malian', 'Maltese', 'Marshallese', 'Mauritanian', 'Mauritian', 'Mexican', 'Micronesian', 'Moldovan', 
+                                        'Monacan', 'Mongolian', 'Moroccan', 'Mosotho', 'Motswana', 'Mozambican', 'Namibian', 'Nauruan', 'Nepalese', 
+                                        'New Zealander', 'Ni-Vanuatu', 'Nicaraguan', 'Nigerien', 'North Korean', 'Northern Irish', 'Norwegian', 'Omani', 
+                                        'Pakistani', 'Palauan', 'Panamanian', 'Papua New Guinean', 'Paraguayan', 'Peruvian', 'Polish', 'Portuguese', 'Qatari', 
+                                        'Romanian', 'Russian', 'Rwandan', 'Saint Lucian', 'Salvadoran', 'Samoan', 'San Marinese', 'Sao Tomean', 'Saudi', 
+                                        'Scottish', 'Senegalese', 'Serbian', 'Seychellois', 'Sierra Leonean', 'Singaporean', 'Slovakian', 'Slovenian', 
+                                        'Solomon Islander', 'Somali', 'South African', 'South Korean', 'Spanish', 'Sri Lankan', 'Sudanese', 'Surinamer', 
+                                        'Swazi', 'Swedish', 'Swiss', 'Syrian', 'Taiwanese', 'Tajik', 'Tanzanian', 'Thai', 'Togolese', 'Tongan', 
+                                        'Trinidadian or Tobagonian', 'Tunisian', 'Turkish', 'Tuvaluan', 'Ugandan', 'Ukrainian', 'Uruguayan', 'Uzbekistani', 
+                                        'Venezuelan', 'Vietnamese', 'Welsh', 'Yemenite', 'Zambian', 'Zimbabwean'
+                                    ] as $nationality)
+                                        <option value="{{ $nationality }}" {{ old('nationality') == $nationality ? 'selected' : '' }}>
+                                            {{ __($nationality) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('nationality'))
+                                    <p class="text-danger">{{ $errors->first('nationality') }}</p>
+                                @endif
+                            </div>
                         </div>
+                        
                         
                         <div class="mb-3">
                             <label class="form-label">{{ __('Sex') }} <span class="text-danger">*</span></label>
@@ -232,7 +273,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        {{-- <div class="col-lg-3">
                             <div class="input-box mb-20">
                                 <label for="place_of_issue">{{ __('Place Of Issue') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="place_of_issue" aria-label="Default select example">
@@ -255,7 +296,48 @@
                                     <p class="text-danger">{{ $errors->first('place_of_issue') }}</p>
                                 @endif
                             </div>
+                        </div> --}}
+
+                        <div class="col-lg-3">
+                            <div class="input-box mb-20">
+                                <label for="place_of_issue">{{ __('Place Of Issue') }} <span class="text-danger">*</span></label>
+                                <select class="form-select" name="place_of_issue" aria-label="Default select example">
+                                    <option disabled value="" selected>{{ __('Place Of Issue') }}</option>
+                                    @foreach([
+                                        'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 
+                                        'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 
+                                        'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 
+                                        'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cambodia', 'Cameroon', 'Canada', 'Central African Republic', 'Chad', 
+                                        'Chile', 'China', 'Colombia', 'Comoros', 'Congo', 'Costa Rica', 'Croatia', 'Cuba', 'Cyprus', 'Czechia', 
+                                        'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 
+                                        'Eritrea', 'Estonia', 'Eswatini', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia', 'Georgia', 
+                                        'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Holy See', 
+                                        'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 
+                                        'Ivory Coast', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Kuwait', 'Kyrgyzstan', 'Laos', 
+                                        'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Madagascar', 
+                                        'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 
+                                        'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 
+                                        'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea', 'North Macedonia', 
+                                        'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 
+                                        'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 
+                                        'Saint Vincent and the Grenadines', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 
+                                        'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 
+                                        'South Africa', 'South Korea', 'South Sudan', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Sweden', 
+                                        'Switzerland', 'Syria', 'Tajikistan', 'Tanzania', 'Thailand', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 
+                                        'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 
+                                        'United States of America', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe'
+                                    ] as $country)
+                                        <option value="{{ $country }}" {{ old('place_of_issue') == $country ? 'selected' : '' }}>
+                                            {{ __($country) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('place_of_issue'))
+                                    <p class="text-danger">{{ $errors->first('place_of_issue') }}</p>
+                                @endif
+                            </div>
                         </div>
+                        
                     </div>
 
                     <h1 style="font-size: 30px;">Education History</h1>
@@ -282,7 +364,7 @@
                             <div class="input-box mb-20">
                                 <label for="passing_year">{{ __('Passing Year') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="passing_year" aria-label="Default select example">
-                                    <option value="" selected>{{ __('Passing Year') }}</option>
+                                    <option disabled value="" selected>{{ __('Passing Year') }}</option>
                                     <option value="2001" {{ old('passing_year') == '1' ? 'selected' : '' }}>{{ __('2001') }}</option>
                                     <option value="2000" {{ old('passing_year') == '1' ? 'selected' : '' }}>{{ __('2000') }}</option>
                                     <option value="2002" {{ old('passing_year') == '1' ? 'selected' : '' }}>{{ __('2002') }}</option>
@@ -322,7 +404,7 @@
                             <div class="input-box mb-20">
                                 <label for="date_of_birth">{{ __('Grade') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="grade" aria-label="Default select example">
-                                    <option value="" selected>{{ __('Select') }}</option>
+                                    <option disabled value="" selected>{{ __('Select') }}</option>
                                     <option value="A+" {{ old('grade') == '1' ? 'selected' : '' }}>{{ __('A+') }}</option>
                                     <option value="A" {{ old('grade') == '1' ? 'selected' : '' }}>{{ __('A') }}</option>
                                     <option value="B+" {{ old('grade') == '1' ? 'selected' : '' }}>{{ __('B+') }}</option>
@@ -354,7 +436,7 @@
                             <div class="input-box mb-20">
                                 <label for="relationship_name">{{ __('Relationship of above to you') }} <span class="text-danger">*</span></label>
                                 <select class="form-select" name="relationship_name" aria-label="Default select example">
-                                    <option value="" selected>{{ __('Relationship of above to you') }}</option>
+                                    <option disabled value="" selected>{{ __('Relationship of above to you') }}</option>
                                     <option value="Brother" {{ old('relationship_name') == '1' ? 'selected' : '' }}>{{ __('Brother') }}</option>
                                     <option value="Child" {{ old('relationship_name') == '1' ? 'selected' : '' }}>{{ __('Child') }}</option>
                                     <option value="Daughter" {{ old('relationship_name') == '1' ? 'selected' : '' }}>{{ __('Daughter') }}</option>
